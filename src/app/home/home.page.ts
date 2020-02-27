@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Plugins } from '@capacitor/core'
+
+const { HmsPushPlugin } = Plugins;
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,10 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor() { }
+
+  getPushToken() {
+    HmsPushPlugin.getToken();
+  }
 
 }
