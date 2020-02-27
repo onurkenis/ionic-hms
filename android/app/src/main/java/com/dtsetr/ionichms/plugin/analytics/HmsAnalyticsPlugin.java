@@ -9,6 +9,7 @@ import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
+import com.getcapacitor.ui.Toast;
 import com.huawei.hms.analytics.HiAnalytics;
 import com.huawei.hms.analytics.HiAnalyticsInstance;
 import com.huawei.hms.analytics.HiAnalyticsTools;
@@ -18,7 +19,7 @@ public class HmsAnalyticsPlugin extends Plugin {
     private HiAnalyticsInstance instance;
 
     public void createHiAnalyticsInstance() {
-        if(instance != null) return;
+        if (instance != null) return;
 
         HiAnalyticsTools.enableLog();
         instance = HiAnalytics.getInstance(getContext());
@@ -40,5 +41,7 @@ public class HmsAnalyticsPlugin extends Plugin {
         Log.i(Constants.ANALYTICS_TAG, "bundle: " + bundleString);
 
         instance.onEvent(eventName, bundle);
+
+        Toast.show(getContext(), Constants.ANALYTICS_TAG + eventName + " is sent.");
     }
 }
