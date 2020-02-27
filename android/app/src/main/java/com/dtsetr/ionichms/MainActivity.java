@@ -2,6 +2,7 @@ package com.dtsetr.ionichms;
 
 import android.os.Bundle;
 
+import com.dtsetr.ionichms.plugin.analytics.HmsAnalyticsPlugin;
 import com.dtsetr.ionichms.plugin.push.HmsPushPlugin;
 import com.getcapacitor.BridgeActivity;
 import com.getcapacitor.Plugin;
@@ -18,6 +19,7 @@ public class MainActivity extends BridgeActivity {
       // Additional plugins you've installed go here
       // Ex: add(TotallyAwesomePlugin.class);
       add(HmsPushPlugin.class);
+      add(HmsAnalyticsPlugin.class);
     }});
   }
 }
