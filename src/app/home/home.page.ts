@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Plugins } from '@capacitor/core'
 
-const { HmsPushPlugin } = Plugins;
+const { HmsPushPlugin, HmsAnalyticsPlugin } = Plugins;
 
 @Component({
   selector: 'app-home',
@@ -14,6 +14,11 @@ export class HomePage {
 
   getPushToken() {
     HmsPushPlugin.getToken();
+  }
+
+  logEvent(name: string, bundle: object) {
+    const param = {eventName: name, bundle: JSON.stringify(bundle)}
+    HmsAnalyticsPlugin.logEvent(param);
   }
 
 }
