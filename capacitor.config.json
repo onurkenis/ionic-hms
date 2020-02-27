@@ -1,0 +1,8 @@
+{
+  "appId": "com.dtsetr.ionichms",
+  "appName": "ionic-hms",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
